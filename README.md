@@ -7,7 +7,7 @@ O objetivo do projeto é apresentar minhas habilidades, trajetória e projetos d
 
 ## 🚀 Demonstração
 
-🔗 [Acesse o portfólio online](https://seu-dominio.com)
+🔗 [Acesse o portfólio online](https://portfolio-qq8ebgmpv-lucasvlvianas-projects.vercel.app/)
 
 ---
 
