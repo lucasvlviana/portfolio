@@ -67,7 +67,7 @@ export function HeroSection() {
         </div>
         <div className="hero-proof">
           <img className="profile-thumb" src={profileImage} alt="Lucas Viana" />
-          <p><strong>Desde 2014</strong><span>em infraestrutura, redes e telecomunicações</span></p>
+          <p><strong>Desde 2016</strong><span>em infraestrutura, redes e telecomunicações</span></p>
         </div>
       </div>
       <div className="hero-visual" aria-label="Resumo profissional">
@@ -89,14 +89,14 @@ export function JourneySection() {
     <section className="section-wrap journey section-block" id="trajetoria">
       <div className="section-heading"><p className="eyebrow">01 / DE ONDE VENHO</p><h2>Base técnica sólida.<br /><span>Próximo passo: SOC.</span></h2></div>
       <div className="journey-copy">
-        <p className="body-large">Sou bacharel em Ciência da Computação e trabalho com redes e telecomunicações desde 2014. Minha experiência combina suporte técnico, infraestrutura e acompanhamento de operações.</p>
+        <p className="body-large">Sou bacharel em Ciência da Computação e trabalho com redes e telecomunicações desde 2016. Minha experiência combina suporte técnico, infraestrutura e acompanhamento de operações.</p>
         <p>Agora direciono essa bagagem para a Cibersegurança. Estou cursando pós-graduação em Cibersegurança Ofensiva na Acadi-TI, com formação em abordagens Blue, Red e Green Team, e busco minha primeira oportunidade em SOC.</p>
         <p>Quero contribuir com triagem de alertas, resposta inicial a incidentes e documentação cuidadosa — somando conhecimento de redes, atendimento e comunicação clara com usuários.</p>
         <p>Também concluí o MBA em Desenvolvimento Full Stack da Rocketseat. A experiência com desenvolvimento web complementa minha base de infraestrutura e meus estudos em segurança.</p>
         <ArrowLink href={resumePdf}>Ver currículo completo</ArrowLink>
       </div>
       <div className="career-strip">
-        <div><span className="strip-number">2014</span><span>início da trajetória<br />em redes e telecom</span></div>
+        <div><span className="strip-number">2016</span><span>início da trajetória<br />em redes e telecom</span></div>
         <div><span className="strip-number">SOC</span><span>objetivo<br />profissional</span></div>
         <div><span className="strip-number">BH</span><span>Minas Gerais<br />Brasil</span></div>
       </div>
@@ -141,7 +141,7 @@ export function LabsSection({ labs, writeups, loading, error }) {
         <div className="section-heading"><p className="eyebrow">03 / PRÁTICA EM SEGURANÇA</p><h2>Estudo que vira<br /><span>evidência prática.</span></h2></div>
         <p className="section-intro">O plano prevê laboratórios controlados e writeups para documentar cada etapa. Os itens abaixo ainda estão planejados.</p>
       </div>
-      {error && <p className="api-notice" role="status">Não foi possível carregar os projetos e laboratórios. Tente atualizar a página em instantes.</p>}
+      {error && <p className="api-notice" role="status">API indisponível. Projetos e laboratórios estão sendo exibidos pelo conteúdo local.</p>}
       <div className="lab-grid" aria-live="polite">
         {labs.map((lab) => (
           <article className="lab-card" key={lab.slug}>

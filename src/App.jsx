@@ -10,11 +10,10 @@ import {
   SkillsSection,
 } from "./components/PortfolioSections.jsx";
 import { getPortfolio } from "./services/api.js";
-
-const emptyPortfolio = { projects: [], labs: [], writeups: [] };
+import { fallbackPortfolio } from "./data/portfolioFallback.js";
 
 export default function App() {
-  const [portfolio, setPortfolio] = useState(emptyPortfolio);
+  const [portfolio, setPortfolio] = useState(fallbackPortfolio);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -24,7 +23,10 @@ export default function App() {
     getPortfolio(controller.signal)
       .then((data) => setPortfolio(data))
       .catch((requestError) => {
-        if (requestError.name !== "AbortError") setError(true);
+        if (requestError.name !== "AbortError") {
+          setPortfolio(fallbackPortfolio);
+          setError(true);
+        }
       })
       .finally(() => {
         if (!controller.signal.aborted) setLoading(false);

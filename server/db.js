@@ -1,6 +1,7 @@
 import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
+import { initialLabs, initialProjects } from "../src/data/portfolioFallback.js";
 
 const defaultDatabasePath = path.resolve(process.cwd(), "data", "portfolio.sqlite");
 const databasePath = path.resolve(process.env.DATABASE_PATH || defaultDatabasePath);
@@ -40,64 +41,6 @@ db.exec(`
     display_order INTEGER NOT NULL DEFAULT 0
   );
 `);
-
-const initialProjects = [
-  {
-    slug: "mais-engenharia-arquitetura",
-    title: "Mais Engenharia & Arquitetura",
-    category: "INSTITUCIONAL · FREELANCER",
-    description: "Site para escritório de engenharia e arquitetura, apresentando serviços, projetos e canais de contato.",
-    url: "https://maisarquitetura.netlify.app/",
-  },
-  {
-    slug: "the-rokz-burger",
-    title: "The Rokz Burger",
-    category: "MARCA · FREELANCER",
-    description: "Presença digital para hamburgueria artesanal de Belo Horizonte.",
-    url: "https://therokz.netlify.app/",
-  },
-  {
-    slug: "barbearia-modelo",
-    title: "Barbearia Modelo",
-    category: "AGENDAMENTO · DEMONSTRAÇÃO",
-    description: "Experiência de agendamento online para serviços de barbearia.",
-    url: "https://modelodebarbearia2026.netlify.app/",
-  },
-  {
-    slug: "studio-modelo-nails",
-    title: "Studio Modelo Nails",
-    category: "AGENDAMENTO · DEMONSTRAÇÃO",
-    description: "Catálogo de serviços e fluxo de agendamento para um estúdio de unhas.",
-    url: "https://studionailsmodelo.netlify.app/",
-  },
-];
-
-const initialLabs = [
-  {
-    slug: "ambiente-pentest",
-    title: "Ambiente para Pentest",
-    description: "Preparar um laboratório com Kali Linux e máquina-alvo para praticar enumeração e análise em ambiente controlado.",
-    status: "PLANEJADO",
-    period: "OUT 2026",
-    tags: ["Kali Linux", "Linux", "Lab local"],
-  },
-  {
-    slug: "tryhackme-jr-penetration-tester",
-    title: "TryHackMe: Jr Penetration Tester",
-    description: "Trilha prática introdutória, com salas guiadas e writeups publicados após a conclusão de cada laboratório.",
-    status: "PLANEJADO",
-    period: "NOV 2026 – FEV 2027",
-    tags: ["Nmap", "Enumeração", "Writeups"],
-  },
-  {
-    slug: "tryhackme-soc-level-1",
-    title: "TryHackMe: SOC Level 1",
-    description: "Prática orientada a monitoramento e investigação, como complemento aos estudos de operações e resposta a incidentes.",
-    status: "PLANEJADO",
-    period: "MAR – JUN 2027",
-    tags: ["Blue Team", "Triagem", "Incidentes"],
-  },
-];
 
 function seedRows(table, rows) {
   const normalizedRows = rows.map((row, index) => {
